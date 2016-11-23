@@ -18,5 +18,9 @@
   "homepage": "https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio#readme",
   "dependencies": {
     "webdriverio": "^4.4.0"
+  },
+  "devDependencies": {
+    "wdio-dot-reporter": "0.0.6",
+    "wdio-mocha-framework": "^0.5.4"
   }
 }
