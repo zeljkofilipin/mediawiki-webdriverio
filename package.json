@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio/issues"
   },
-  "homepage": "https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio#readme"
+  "homepage": "https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio#readme",
+  "dependencies": {
+    "webdriverio": "^4.4.0"
+  }
 }
