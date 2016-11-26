@@ -1,6 +1,6 @@
-# Selenium + MediaWiki + Mocha + WebdriverIO
+# MediaWiki + WebdriverIO
 
-An example repository on how to implement Selenium tests in Node.js using Mocha and WebdriverIO.
+An example repository on how to implement Selenium tests in Node.js using WebdriverIO.
 
 ## Prerequisites
 
