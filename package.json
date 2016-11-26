@@ -1,26 +1,27 @@
 {
-  "name": "selenium-mediawiki-mocha-webdriverio",
+  "name": "mediawiki-webdriverio",
   "version": "0.0.1",
-  "description": "An example repository on how to implement Selenium tests in Node.js using Mocha and WebdriverIO",
-  "main": "index.js",
+  "description": "An example repository on how to implement Selenium tests in Node.js using WebdriverIO",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio.git"
+    "url": "git+https://github.com/zeljkofilipin/mediawiki-webdriverio.git"
   },
   "author": "Željko Filipin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio/issues"
+    "url": "https://github.com/zeljkofilipin/mediawiki-webdriverio/issues"
   },
-  "homepage": "https://github.com/zeljkofilipin/selenium-mediawiki-mocha-webdriverio#readme",
+  "homepage": "https://github.com/zeljkofilipin/mediawiki-webdriverio#readme",
   "dependencies": {
-    "webdriverio": "^4.4.0"
-  },
-  "devDependencies": {
     "wdio-dot-reporter": "0.0.6",
-    "wdio-mocha-framework": "^0.5.4"
+    "wdio-mocha-framework": "^0.5.4",
+    "webdriverio": "^4.4.0"
   }
 }
