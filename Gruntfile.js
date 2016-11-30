@@ -5,17 +5,25 @@ module.exports = function ( grunt ) {
 	// Project configuration.
 	grunt.initConfig( {
 
+		// Configure a jscs task
+		jscs: {
+			src: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
+			options: {
+				config: '.jscsrc'
+			}
+		},
+
 		// Configure a jshint task
 		jshint: {
 			all: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
 			options: {
 				jshintrc: '.jshintrc'
 			}
-		},
+		}
 
 	} );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'jshint' ] );
+	grunt.registerTask( 'default', [ 'jscs', 'jshint' ] );
 
 };
