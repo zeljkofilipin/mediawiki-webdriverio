@@ -17,8 +17,8 @@ An example repository on how to implement Selenium tests in Node.js using Webdri
 
 Run the commands in separate console tabs or windows:
 
-    chromedriver --url-base=/wd/hub --port=4444
-    ./node_modules/.bin/wdio wdio.conf.js
+    $ chromedriver --url-base=/wd/hub --port=4444
+    $ npm run wdio
 
 ## Links
 

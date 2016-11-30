@@ -27,11 +27,19 @@ module.exports = function ( grunt ) {
 			options: {
 				jshintrc: '.jshintrc'
 			}
+		},
+
+		// Configure WebdriverIO task
+		webdriver: {
+			test: {
+				configFile: './wdio.conf.js'
+			}
 		}
 
 	} );
 
 	// Default task(s)
 	grunt.registerTask( 'default', [ 'eslint', 'jscs', 'jshint' ] );
+	grunt.registerTask( 'wdio', 'webdriver' );
 
 };
