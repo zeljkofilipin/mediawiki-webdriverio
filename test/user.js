@@ -8,4 +8,9 @@ describe( 'User', function () {
 		assert( browser.isVisible( '#wpCreateaccount' ) );
 	} );
 
+	it( 'should be able to log in', function () {
+		browser.url( '/Special:UserLogin' );
+		assert( browser.isVisible( '#wpLoginAttempt' ) );
+	} );
+
 } );
