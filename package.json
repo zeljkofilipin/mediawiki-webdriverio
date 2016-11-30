@@ -21,6 +21,7 @@
   "homepage": "https://github.com/zeljkofilipin/mediawiki-webdriverio#readme",
   "dependencies": {
     "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
     "load-grunt-tasks": "^3.5.2",
     "wdio-dot-reporter": "0.0.6",
     "wdio-mocha-framework": "^0.5.4",

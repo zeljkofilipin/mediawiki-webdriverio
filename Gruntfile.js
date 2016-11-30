@@ -4,9 +4,18 @@ module.exports = function ( grunt ) {
 
 	// Project configuration.
 	grunt.initConfig( {
+
+		// Configure a jshint task
+		jshint: {
+			all: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
+			options: {
+				jshintrc: '.jshintrc'
+			}
+		},
+
 	} );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [] );
+	grunt.registerTask( 'default', [ 'jshint' ] );
 
 };
