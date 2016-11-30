@@ -2,10 +2,10 @@ module.exports = function ( grunt ) {
 
 	require( 'load-grunt-tasks' )( grunt );
 
-	// Project configuration.
+	// Project configuration
 	grunt.initConfig( {
 
-		// Configure eslint task
+		// Configure ESLint task
 		eslint: {
 			all: [
 				'**/*.js',
@@ -13,7 +13,7 @@ module.exports = function ( grunt ) {
 			]
 		},
 
-		// Configure jscs task
+		// Configure JSCS task
 		jscs: {
 			src: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
 			options: {
@@ -21,7 +21,7 @@ module.exports = function ( grunt ) {
 			}
 		},
 
-		// Configure jshint task
+		// Configure JSHint task
 		jshint: {
 			all: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
 			options: {
@@ -31,7 +31,7 @@ module.exports = function ( grunt ) {
 
 	} );
 
-	// Default task(s).
+	// Default task(s)
 	grunt.registerTask( 'default', [ 'eslint', 'jscs', 'jshint' ] );
 
 };
