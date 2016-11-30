@@ -53,4 +53,4 @@ Run the commands in separate console tabs or windows:
 
 - [Selenium/Node.js](https://www.mediawiki.org/wiki/Selenium/Node.js)
 
-TODO: Travis CI
+[![Build Status](https://travis-ci.org/zeljkofilipin/mediawiki-webdriverio.svg?branch=master)](https://travis-ci.org/zeljkofilipin/mediawiki-webdriverio)
