@@ -9,7 +9,7 @@ module.exports = function ( grunt ) {
 		eslint: {
 			all: [
 				'**/*.js',
-				'!node_modules/**',
+				'!node_modules/**'
 			]
 		},
 
