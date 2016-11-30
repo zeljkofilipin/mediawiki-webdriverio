@@ -13,4 +13,9 @@ describe( 'Page', function () {
 		assert( browser.isVisible( 'li#ca-edit a' ) );
 	} );
 
+	it( 'should have history', function () {
+		browser.url( '/Main_Page' );
+		assert( browser.isVisible( 'li#ca-history a' ) );
+	} );
+
 } );
