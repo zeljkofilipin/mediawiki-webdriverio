@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/zeljkofilipin/mediawiki-webdriverio#readme",
   "dependencies": {
+    "grunt": "^1.0.1",
+    "load-grunt-tasks": "^3.5.2",
     "wdio-dot-reporter": "0.0.6",
     "wdio-mocha-framework": "^0.5.4",
     "webdriverio": "^4.4.0"
