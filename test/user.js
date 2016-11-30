@@ -13,4 +13,14 @@ describe( 'User', function () {
 		assert( browser.isVisible( '#wpLoginAttempt' ) );
 	} );
 
+	it( 'should be able to change preferences', function () {
+		browser.url( '/Special:UserLogin' );
+		browser.setValue( '#wpName1', 'Admin' );
+		browser.setValue( '#wpPassword1', 'vagrant' );
+		browser.click( '#wpLoginAttempt' );
+
+		browser.url( '/Special:Preferences' );
+		assert( browser.isVisible( '#prefcontrol' ) );
+	} );
+
 } );
