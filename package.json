@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/zeljkofilipin/mediawiki-webdriverio#readme",
   "dependencies": {
+    "eslint-config-wikimedia": "^0.3.0",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
+    "grunt-eslint": "^19.0.0",
     "grunt-jscs": "^3.0.1",
     "jscs": "^2.11.0",
     "load-grunt-tasks": "^3.5.2",
