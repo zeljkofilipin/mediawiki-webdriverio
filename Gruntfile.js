@@ -29,6 +29,14 @@ module.exports = function ( grunt ) {
 			}
 		},
 
+		// Configure JSONLint task
+		jsonlint: {
+			all: [
+				'**/*.json',
+				'!node_modules/**'
+			]
+		},
+
 		// Configure WebdriverIO task
 		webdriver: {
 			test: {
@@ -39,7 +47,7 @@ module.exports = function ( grunt ) {
 	} );
 
 	// Default task(s)
-	grunt.registerTask( 'default', [ 'eslint', 'jscs', 'jshint' ] );
+	grunt.registerTask( 'default', [ 'eslint', 'jscs', 'jshint', 'jsonlint' ] );
 	grunt.registerTask( 'wdio', 'webdriver' );
 
 };
