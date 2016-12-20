@@ -15,7 +15,7 @@ An example repository on how to implement Selenium tests in Node.js using Webdri
 
 ## Usage
 
-    npm run wdio
+    npm run selenium
 
 ## Links
 
