@@ -13,22 +13,6 @@ module.exports = function ( grunt ) {
 			]
 		},
 
-		// Configure JSCS task
-		jscs: {
-			src: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
-			options: {
-				config: '.jscsrc'
-			}
-		},
-
-		// Configure JSHint task
-		jshint: {
-			all: [ 'Gruntfile.js', 'test/**/*.js', 'wdio.conf.js' ],
-			options: {
-				jshintrc: '.jshintrc'
-			}
-		},
-
 		// Configure JSONLint task
 		jsonlint: {
 			all: [
@@ -47,6 +31,6 @@ module.exports = function ( grunt ) {
 	} );
 
 	// Default task(s)
-	grunt.registerTask( 'default', [ 'eslint', 'jscs', 'jshint', 'jsonlint' ] );
+	grunt.registerTask( 'default', [ 'eslint', 'jsonlint' ] );
 
 };
