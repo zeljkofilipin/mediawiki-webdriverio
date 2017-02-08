@@ -29,6 +29,7 @@
     "load-grunt-tasks": "^3.5.2",
     "wdio-dot-reporter": "0.0.6",
     "wdio-mocha-framework": "^0.5.4",
+    "wdio-spec-reporter": "0.0.5",
     "webdriverio": "^4.4.0"
   }
 }
