@@ -1,19 +1,20 @@
-/* global browser */
-var Page = require( './page' ),
-	preferencesPage = Object.create( Page, {
+'use strict';
+var Page = require( './page' );
 
-		realName: { get: function () { return browser.element( '#mw-input-wprealname' ); } },
-		save: { get: function () { return browser.element( '#prefcontrol' ); } },
+class PreferencesPage extends Page {
 
-		open: { value: function() {
-			Page.open.call( this, 'Special:Preferences' );
-		} },
+	get realName() { return browser.element( '#mw-input-wprealname' ); }
+	get save() { return browser.element( '#prefcontrol' ); }
 
-		chageRealName: { value: function( realName ) {
-			this.open();
-			this.realName.setValue( realName );
-			this.save.click();
-		} }
+	open() {
+		super.open( 'Special:Preferences' );
+	}
 
-	} );
-module.exports = preferencesPage;
+	chageRealName( realName ) {
+		this.open();
+		this.realName.setValue( realName );
+		this.save.click();
+	}
+
+}
+module.exports = new PreferencesPage();

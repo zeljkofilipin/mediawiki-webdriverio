@@ -1,9 +1,11 @@
-var Page = require( './page' ),
-	userLogoutPage = Object.create( Page, {
+'use strict';
+var Page = require( './page' );
 
-		open: { value: function() {
-			Page.open.call( this, 'Special:UserLogout' );
-		} }
+class UserLogoutPage extends Page {
 
-	} );
-module.exports = userLogoutPage;
+	open() {
+		super.open( 'Special:UserLogout' );
+	}
+
+}
+module.exports = new UserLogoutPage();

@@ -1,12 +1,13 @@
-/* global browser */
-var Page = require( './page' ),
-	historyPage = Object.create( Page, {
+'use strict';
+var Page = require( './page' );
 
-		comment: { get: function () { return browser.element( '#pagehistory .comment' ); } },
+class HistoryPage extends Page {
 
-		open: { value: function( name ) {
-			Page.open.call( this, name + '&action=history' );
-		} }
+	get comment() { return browser.element( '#pagehistory .comment' ); }
 
-	} );
-module.exports = historyPage;
+	open( name ) {
+		super.open( name + '&action=history' );
+	}
+
+}
+module.exports = new HistoryPage();

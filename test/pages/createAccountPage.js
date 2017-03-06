@@ -1,24 +1,25 @@
-/* global browser */
-var Page = require( './page' ),
-	createAccountPage = Object.create( Page, {
+'use strict';
+var Page = require( './page' );
 
-		username: { get: function () { return browser.element( '#wpName2' ); } },
-		password: { get: function () { return browser.element( '#wpPassword2' ); } },
-		confirmPassword: { get: function () { return browser.element( '#wpRetype' ); } },
-		create: { get: function () { return browser.element( '#wpCreateaccount' ); } },
-		heading: { get: function () { return browser.element( '#firstHeading' ); } },
+class CreateAccountPage extends Page {
 
-		open: { value: function() {
-			Page.open.call( this, 'Special:CreateAccount' );
-		} },
+	get username() { return browser.element( '#wpName2' ); }
+	get password() { return browser.element( '#wpPassword2' ); }
+	get confirmPassword() { return browser.element( '#wpRetype' ); }
+	get create() { return browser.element( '#wpCreateaccount' ); }
+	get heading() { return browser.element( '#firstHeading' ); }
 
-		createAccount: { value: function( username, password ) {
-			this.open();
-			this.username.setValue( username );
-			this.password.setValue( password );
-			this.confirmPassword.setValue( password );
-			this.create.click();
-		} }
+	open() {
+		super.open( 'Special:CreateAccount' );
+	}
 
-	} );
-module.exports = createAccountPage;
+	createAccount( username, password ) {
+		this.open();
+		this.username.setValue( username );
+		this.password.setValue( password );
+		this.confirmPassword.setValue( password );
+		this.create.click();
+	}
+
+}
+module.exports = new CreateAccountPage();

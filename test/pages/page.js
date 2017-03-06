@@ -1,9 +1,11 @@
-/* global browser */
-function Page() {
+// From http://webdriver.io/guide/testrunner/pageobjects.html
+'use strict';
+class Page {
+	constructor() {
+		this.title = 'My Page';
+	}
+	open( path ) {
+		browser.url( '/index.php?title=' + path );
+	}
 }
-
-Page.prototype.open = function ( path ) {
-	browser.url( '/index.php?title=' + path );
-};
-
-module.exports = new Page();
+module.exports = Page;

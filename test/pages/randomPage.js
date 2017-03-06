@@ -1,21 +1,22 @@
-/* global browser */
-var Page = require( './page' ),
-	randomPage = Object.create( Page, {
+'use strict';
+var Page = require( './page' );
 
-		content: { get: function () { return browser.element( '#wpTextbox1' ); } },
-		displayedContent: { get: function () { return browser.element( '#mw-content-text' ); } },
-		heading: { get: function () { return browser.element( '#firstHeading' ); } },
-		save: { get: function () { return browser.element( '#wpSave' ); } },
+class RandomPage extends Page {
 
-		open: { value: function( name ) {
-			Page.open.call( this, name + '&action=edit' );
-		} },
+	get content() { return browser.element( '#wpTextbox1' ); }
+	get displayedContent() { return browser.element( '#mw-content-text' ); }
+	get heading() { return browser.element( '#firstHeading' ); }
+	get save() { return browser.element( '#wpSave' ); }
 
-		edit: { value: function( name, content ) {
-			this.open( name );
-			this.content.setValue( content );
-			this.save.click();
-		} }
+	open( name ) {
+		super.open( name + '&action=edit' );
+	}
 
-	} );
-module.exports = randomPage;
+	edit( name, content ) {
+		this.open( name );
+		this.content.setValue( content );
+		this.save.click();
+	}
+
+}
+module.exports = new RandomPage();
