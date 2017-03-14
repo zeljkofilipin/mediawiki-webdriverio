@@ -1,7 +1,7 @@
 'use strict';
-var Page = require( './page' );
+const Page = require( './page' );
 
-class RandomPage extends Page {
+class EditPage extends Page {
 
 	get content() { return browser.element( '#wpTextbox1' ); }
 	get displayedContent() { return browser.element( '#mw-content-text' ); }
@@ -19,4 +19,4 @@ class RandomPage extends Page {
 	}
 
 }
-module.exports = new RandomPage();
+module.exports = new EditPage();

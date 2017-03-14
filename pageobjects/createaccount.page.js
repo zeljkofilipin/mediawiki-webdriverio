@@ -1,5 +1,5 @@
 'use strict';
-var Page = require( './page' );
+const Page = require( './page' );
 
 class CreateAccountPage extends Page {
 

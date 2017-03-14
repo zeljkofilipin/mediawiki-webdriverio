@@ -1,5 +1,5 @@
 'use strict';
-var Page = require( './page' );
+const Page = require( './page' );
 
 class PreferencesPage extends Page {
 
@@ -10,7 +10,7 @@ class PreferencesPage extends Page {
 		super.open( 'Special:Preferences' );
 	}
 
-	chageRealName( realName ) {
+	changeRealName( realName ) {
 		this.open();
 		this.realName.setValue( realName );
 		this.save.click();

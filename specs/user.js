@@ -1,9 +1,9 @@
 'use strict';
-var assert = require( 'assert' ),
-	CreateAccountPage = require( './pages/createAccountPage' ),
-	UserLoginPage = require( './pages/userLoginPage' ),
-	UserLogoutPage = require( './pages/userLogoutPage' ),
-	PreferencesPage = require( './pages/preferencesPage' );
+const assert = require( 'assert' ),
+	CreateAccountPage = require( '../pageobjects/createaccount.page' ),
+	UserLoginPage = require( '../pageobjects/userlogin.page' ),
+	UserLogoutPage = require( '../pageobjects/userlogout.page' ),
+	PreferencesPage = require( '../pageobjects/preferences.page' );
 
 describe( 'User', function () {
 
@@ -11,8 +11,8 @@ describe( 'User', function () {
 		username;
 
 	beforeEach( function () {
+		username = `User-${Math.random().toString()}`;
 		password = Math.random().toString();
-		username = Math.random().toString();
 	} );
 
 	it( 'should be able to create account', function () {
@@ -21,7 +21,7 @@ describe( 'User', function () {
 		CreateAccountPage.createAccount( username, password );
 
 		// check
-		assert.equal( CreateAccountPage.heading.getText(), 'Welcome, ' + username + '!' );
+		assert.equal( CreateAccountPage.heading.getText(), `Welcome, ${username}!` );
 
 	} );
 
@@ -49,7 +49,7 @@ describe( 'User', function () {
 		CreateAccountPage.createAccount( username, password );
 
 		// change real name
-		PreferencesPage.chageRealName( realName );
+		PreferencesPage.changeRealName( realName );
 
 		// check
 		assert.equal( PreferencesPage.realName.getValue(), realName );
