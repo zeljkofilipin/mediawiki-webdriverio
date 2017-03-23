@@ -24,7 +24,7 @@ module.exports = function ( grunt ) {
 		// Configure WebdriverIO task
 		webdriver: {
 			test: {
-				configFile: './wdio.conf.vagrant.js'
+				configFile: './wdio.conf.js'
 			}
 		}
 

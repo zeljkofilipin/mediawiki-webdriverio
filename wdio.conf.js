@@ -1,5 +1,15 @@
+/* eslint comma-dangle: 0 */
 /* eslint no-undef: "error"*/
+/* eslint no-console: 0 */
 /* eslint-env node*/
+'use strict';
+
+const path = require( 'path' );
+
+function relPath( foo ) {
+	return path.resolve( __dirname, '../..', foo );
+}
+
 exports.config = {
 
 	//
@@ -13,8 +23,12 @@ exports.config = {
 	// username: 'Admin',
 	// Use if from tests with:
 	// browser.options.username
-	username: 'Admin',
-	password: 'vagrant',
+	username: process.env.MEDIAWIKI_USER === undefined ?
+		'Admin' :
+		process.env.MEDIAWIKI_USER,
+	password: process.env.MEDIAWIKI_PASSWORD === undefined ?
+		'vagrant' :
+		process.env.MEDIAWIKI_PASSWORD,
 	//
 	// ==================
 	// Specify Test Files
@@ -53,13 +67,18 @@ exports.config = {
 	// Sauce Labs platform configurator - a great tool to configure your capabilities:
 	// https://docs.saucelabs.com/reference/platforms-configurator
 	//
+	// For Chrome/Chromium https://sites.google.com/a/chromium.org/chromedriver/capabilities
 	capabilities: [ {
 		// maxInstances can get overwritten per capability. So if you have an in-house Selenium
 		// grid with only 5 firefox instances available you can make sure that not more than
 		// 5 instances get started at a time.
 		maxInstances: 1,
 		//
-		browserName: 'chrome'
+		browserName: 'chrome',
+		// Since Chrome v57 https://bugs.chromium.org/p/chromedriver/issues/detail?id=1625
+		chromeOptions: {
+			args: [ '--enable-automation' ]
+		}
 	} ],
 	//
 	// ===================
@@ -83,7 +102,15 @@ exports.config = {
 	//
 	// Set a base URL in order to shorten url command calls. If your url parameter starts
 	// with "/", then the base url gets prepended.
-	baseUrl: 'http://127.0.0.1:8080/w',
+	baseUrl: (
+		process.env.MW_SERVER === undefined ?
+		'http://127.0.0.1:8080' :
+		process.env.MW_SERVER
+	) + (
+		process.env.MW_SCRIPT_PATH === undefined ?
+		'/w' :
+		process.env.MW_SCRIPT_PATH
+	),
 	//
 	// Default timeout for all waitFor* commands.
 	waitforTimeout: 20000,
@@ -136,7 +163,7 @@ exports.config = {
 	mochaOpts: {
 		ui: 'bdd',
 		timeout: 20000
-	}
+	},
 	//
 	// =====
 	// Hooks
@@ -147,8 +174,8 @@ exports.config = {
 	// resolved to continue.
 	//
 	// Gets executed once before all workers get launched.
-	// onPrepare: function (config, capabilities) {
-	// },
+	// onPrepare: function ( config, capabilities ) {
+	// }
 	//
 	// Gets executed before test execution begins. At this point you can access all global
 	// variables, such as `browser`. It is the perfect place to define custom commands.
