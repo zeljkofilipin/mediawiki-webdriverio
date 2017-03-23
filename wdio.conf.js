@@ -4,12 +4,6 @@
 /* eslint-env node*/
 'use strict';
 
-const path = require( 'path' );
-
-function relPath( foo ) {
-	return path.resolve( __dirname, '../..', foo );
-}
-
 exports.config = {
 
 	//
